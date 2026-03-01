@@ -1,0 +1,41 @@
+﻿Starting deployment for Healthcare smart contract...
+Deploying contract...
+node.exe : Error during 
+deployment: ProviderError: 
+Error: Transaction reverted: 
+trying to deploy a contract 
+whose code is too large
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Users
+\786\AppData\Roaming\np ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo          : N 
+   otSpecified: (Error during   
+  de...de is too large:String   
+ ) [], RemoteException
+    + FullyQualifiedErrorId : N 
+   ativeCommandError
+ 
+    at HttpProvider.request (D:\
+College\fyp-blockchain\web3\node
+_modules\hardhat\src\internal\co
+re\providers\http.ts:116:21)
+    at 
+processTicksAndRejections (node:
+internal/process/task_queues:105
+:5)
+    at HardhatEthersSigner.sendT
+ransaction (D:\College\fyp-block
+chain\web3\node_modules\@nomicfo
+undation\hardhat-ethers\src\sign
+ers.ts:185:18)
+    at ContractFactory.deploy (D
+:\College\fyp-blockchain\web3\no
+de_modules\ethers\src.ts\contrac
+t\factory.ts:111:24)
+    at main (file:///D:/College/
+fyp-blockchain/web3/scripts/depl
+oy.js:9:24)
