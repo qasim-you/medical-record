@@ -132,5 +132,5 @@ scratch_*.js
 scratch/
 
 # Local folders
-diagrams/
+/diagrams/
 
