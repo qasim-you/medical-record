@@ -1,0 +1,25 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="diag_id">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t1" value="Tier 1: Client" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="fe2" value="Web3 Frontend&#xa;+ MetaMask" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" vertex="1" parent="t1">
+          <mxGeometry x="40" y="70" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" value="Tier 2: Server / State" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="480" y="200" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="sc" value="Ethereum Blockchain&#xa;+ Smart Contract" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;" vertex="1" parent="t2">
+          <mxGeometry x="40" y="70" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="arr1" value="Transactions / Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endFill=1;strokeColor=#000000;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t1" target="t2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,88 @@
+<mxfile host="65bd71144e">
+    <diagram name="Class Diagram" id="classdiagram1">
+        <mxGraphModel dx="909" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="&lt;b&gt;HealthChain DApp — Class Diagram (Smart Contract)&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="10" width="600" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="hc" value="&lt;b&gt;&amp;lt;&amp;lt;Smart Contract&amp;gt;&amp;gt;&lt;/b&gt;&#xa;Healthcare" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="70" width="350" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="hc_attr" value="- admin : address&#xa;- doctorCount : uint256&#xa;- patientCount : uint256&#xa;- medicineCount : uint256&#xa;- appointmentCount : uint256&#xa;- platformRevenue : uint256&#xa;- doctors : mapping(address =&gt; Doctor)&#xa;- patients : mapping(address =&gt; Patient)&#xa;- medicines : mapping(uint256 =&gt; Medicine)&#xa;- appointments : mapping(uint256 =&gt; Appointment)&#xa;- patientRecords : mapping(address =&gt; MedicalRecord[])&#xa;- patientPrescriptions : mapping(address =&gt; Prescription[])&#xa;- chats : mapping(bytes32 =&gt; Message[])" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="hc" vertex="1">
+                    <mxGeometry y="40" width="350" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="hc_line" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;" parent="hc" vertex="1">
+                    <mxGeometry y="240" width="350" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="hc_ops" value="+ verifyDoctor(address, bool) : void&#xa;+ addMedicine(...) : void&#xa;+ getPlatformStats() : tuple&#xa;+ registerDoctor(...) : void {payable}&#xa;+ completeAppointment(uint256) : void&#xa;+ updateMedicalRecord(address, ...) : void&#xa;+ prescribeMedicine(address, ...) : void&#xa;+ registerPatient(...) : void&#xa;+ bookAppointment(address, ...) : void {payable}&#xa;+ buyMedicine(uint256, uint256) : void {payable}&#xa;+ sendMessage(address, string) : void&#xa;+ getMessages(address) : Message[]&#xa;+ getAllDoctors() : Doctor[]&#xa;+ getAllMedicines() : Medicine[]&#xa;+ withdrawPlatformRevenue() : void" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="hc" vertex="1">
+                    <mxGeometry y="248" width="350" height="212" as="geometry"/>
+                </mxCell>
+                <mxCell id="doc" value="&lt;b&gt;&amp;lt;&amp;lt;struct&amp;gt;&amp;gt;&lt;/b&gt;&#xa;Doctor" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="70" width="250" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="doc_attr" value="+ wallet : address&#xa;+ name : string&#xa;+ specialization : string&#xa;+ experience : string&#xa;+ consultationFee : uint256&#xa;+ availableHours : string&#xa;+ profileImageURI : string&#xa;+ certificateURI : string&#xa;+ isVerified : bool&#xa;+ isRegistered : bool" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="doc" vertex="1">
+                    <mxGeometry y="40" width="250" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="pat" value="&lt;b&gt;&amp;lt;&amp;lt;struct&amp;gt;&amp;gt;&lt;/b&gt;&#xa;Patient" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="370" width="250" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="pat_attr" value="+ wallet : address&#xa;+ name : string&#xa;+ age : uint256&#xa;+ bloodGroup : string&#xa;+ allergies : string&#xa;+ currentMedications : string&#xa;+ profileImageURI : string&#xa;+ generalConsultant : address&#xa;+ isRegistered : bool" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="pat" vertex="1">
+                    <mxGeometry y="40" width="250" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="med" value="&lt;b&gt;&amp;lt;&amp;lt;struct&amp;gt;&amp;gt;&lt;/b&gt;&#xa;Medicine" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="70" width="250" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="med_attr" value="+ id : uint256&#xa;+ name : string&#xa;+ manufacturer : string&#xa;+ category : string&#xa;+ dosage : string&#xa;+ price : uint256&#xa;+ stockQuantity : uint256&#xa;+ discount : uint256&#xa;+ sideEffects : string&#xa;+ imageURI : string&#xa;+ isActive : bool" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="med" vertex="1">
+                    <mxGeometry y="40" width="250" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="appt" value="&lt;b&gt;&amp;lt;&amp;lt;struct&amp;gt;&amp;gt;&lt;/b&gt;&#xa;Appointment" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="390" width="250" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="appt_attr" value="+ id : uint256&#xa;+ patient : address&#xa;+ doctor : address&#xa;+ time : string&#xa;+ note : string&#xa;+ isCompleted : bool" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="appt" vertex="1">
+                    <mxGeometry y="40" width="250" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="medrec" value="&lt;b&gt;&amp;lt;&amp;lt;struct&amp;gt;&amp;gt;&lt;/b&gt;&#xa;MedicalRecord" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="640" width="250" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="medrec_attr" value="+ id : uint256&#xa;+ patient : address&#xa;+ doctor : address&#xa;+ diagnosis : string&#xa;+ medicalHistory : string&#xa;+ timestamp : uint256" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="medrec" vertex="1">
+                    <mxGeometry y="40" width="250" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="presc" value="&lt;b&gt;&amp;lt;&amp;lt;struct&amp;gt;&amp;gt;&lt;/b&gt;&#xa;Prescription" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="880" width="250" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="presc_attr" value="+ id : uint256&#xa;+ patient : address&#xa;+ doctor : address&#xa;+ medicineId : uint256&#xa;+ dosageInstruction : string&#xa;+ quantity : uint256&#xa;+ timestamp : uint256" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="presc" vertex="1">
+                    <mxGeometry y="40" width="250" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="msg" value="&lt;b&gt;&amp;lt;&amp;lt;struct&amp;gt;&amp;gt;&lt;/b&gt;&#xa;Message" style="swimlane;fontStyle=1;align=center;startSize=40;fontSize=13;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="640" width="250" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="msg_attr" value="+ sender : address&#xa;+ receiver : address&#xa;+ content : string&#xa;+ timestamp : uint256" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=11;" parent="msg" vertex="1">
+                    <mxGeometry y="40" width="250" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="r1" value="1..*" style="endArrow=diamondThin;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=11;" parent="1" source="doc_attr" target="hc_attr" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r2" value="1..*" style="endArrow=diamondThin;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=11;" parent="1" source="pat_attr" target="hc_attr" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r3" value="1..*" style="endArrow=diamondThin;endFill=1;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=11;" parent="1" source="med_attr" target="hc_attr" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r4" value="1..*" style="endArrow=diamondThin;endFill=1;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=11;" parent="1" source="appt_attr" target="hc_ops" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r5" value="0..*" style="endArrow=diamondThin;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=11;" parent="1" source="medrec_attr" target="hc_ops" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r6" value="0..*" style="endArrow=diamondThin;endFill=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fontSize=11;" parent="1" source="presc_attr" target="hc_ops" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="r7" value="0..*" style="endArrow=diamondThin;endFill=1;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=11;" parent="1" source="msg_attr" target="hc_ops" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

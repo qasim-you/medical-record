@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Flowchart - Prescribe Medicine" id="flow1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1300" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="&lt;b&gt;Flowchart — Prescribe Medicine Process&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="400" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="start" value="" style="ellipse;html=1;shape=mxgraph.flowchart.start_2;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="480" y="60" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="f1" value="Doctor opens&#xa;Prescribe Medicine page" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="130" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" source="start" target="f1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f2" value="System loads all medicines&#xa;from smart contract" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="210" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" source="f1" target="f2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f2b" value="System loads registered&#xa;patients list (names)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="210" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e2b" style="dashed=1;" edge="1" source="f2" target="f2b" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f3" value="Doctor selects a medicine&#xa;card and clicks 'Assign RX'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="290" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" source="f2" target="f3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="d1" value="Medicine&#xa;in stock?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="435" y="370" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" source="f3" target="d1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f_no1" value="Button disabled:&#xa;'Depleted'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="200" y="380" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e_no1" value="No" edge="1" source="d1" target="f_no1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f4" value="Prescription dialog opens:&#xa;Select Patient (dropdown)&#xa;Enter dosage instructions&#xa;Enter quantity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="490" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="Yes" edge="1" source="d1" target="f4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f5" value="Doctor clicks&#xa;'Confirm Rx Auth'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="600" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" source="f4" target="f5" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="d2" value="Patient&#xa;registered?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="435" y="680" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" source="f5" target="d2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f_no2" value="Revert:&#xa;'Patient not registered'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="200" y="690" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e_no2" value="No" edge="1" source="d2" target="f_no2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="d3" value="Medicine&#xa;active?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="435" y="790" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="Yes" edge="1" source="d2" target="d3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f_no3" value="Revert:&#xa;'Medicine not available'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="200" y="800" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e_no3" value="No" edge="1" source="d3" target="f_no3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f6" value="Smart Contract executes:&#xa;prescribeMedicine()&#xa;• Store prescription on-chain&#xa;• Emit MedicinePrescribed event" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="910" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="Yes" edge="1" source="d3" target="f6" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="f7" value="Toast: 'Prescription securely&#xa;dispatched to patient'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1020" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" source="f6" target="f7" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="end" value="" style="ellipse;html=1;shape=mxgraph.flowchart.terminate;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1100" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" source="f7" target="end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

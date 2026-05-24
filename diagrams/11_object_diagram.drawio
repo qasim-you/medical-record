@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Object Diagram" id="obj_diagram">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1400" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="&lt;b&gt;Object Diagram — Active Consultation Snapshot&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Patient Object -->
+        <mxCell id="patientObj" value="&lt;u&gt;&lt;b&gt;p1 : Patient&lt;/b&gt;&lt;/u&gt;&#xa;---------------------------&#xa;wallet = 0x123...&#xa;name = &quot;John Doe&quot;&#xa;age = 35&#xa;isRegistered = true" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fillColor=#FFFFFF;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="150" width="220" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Doctor Object -->
+        <mxCell id="doctorObj" value="&lt;u&gt;&lt;b&gt;d1 : Doctor&lt;/b&gt;&lt;/u&gt;&#xa;---------------------------&#xa;wallet = 0x456...&#xa;name = &quot;Dr. Smith&quot;&#xa;specialization = &quot;Cardiology&quot;&#xa;isVerified = true" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fillColor=#FFFFFF;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="780" y="150" width="220" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Appointment Object -->
+        <mxCell id="apptObj" value="&lt;u&gt;&lt;b&gt;a1 : Appointment&lt;/b&gt;&lt;/u&gt;&#xa;---------------------------&#xa;id = 1&#xa;patient = 0x123...&#xa;doctor = 0x456...&#xa;isCompleted = false&#xa;time = 1718000000" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fillColor=#FFFFFF;strokeColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="490" y="320" width="220" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Links between Objects -->
+        <!-- Link: Patient to Appointment -->
+        <mxCell id="linkPatAppt" value="has" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=14;" edge="1" parent="1" source="patientObj" target="apptObj">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Link: Doctor to Appointment -->
+        <mxCell id="linkDocAppt" value="assigned to" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontSize=14;" edge="1" parent="1" source="apptObj" target="doctorObj">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

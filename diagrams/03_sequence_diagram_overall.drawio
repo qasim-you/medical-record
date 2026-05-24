@@ -1,0 +1,112 @@
+<mxfile host="65bd71144e">
+    <diagram name="Overall Sequence Diagram" id="seq_overall">
+        <mxGraphModel dx="727" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1400" background="#FFFFFF" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="&lt;b&gt;Sequence Diagram — Overall System Lifecycle&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="10" width="500" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="admin" value="Admin" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="80" width="100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="doctor" value="Doctor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="80" width="100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="patient" value="Patient" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="80" width="100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="sc" value="Smart Contract&#xa;(Blockchain)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="80" width="100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="ipfs" value="IPFS&#xa;(Pinata)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="80" width="100" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="m1" value="Upload Profile/Cert" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="350" y="160" as="sourcePoint"/>
+                        <mxPoint x="950" y="160" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="650" y="160"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m2" value="Return CID hash" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="950" y="200" as="sourcePoint"/>
+                        <mxPoint x="350" y="200" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="650" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m3" value="registerDoctor(data, CID, ETH)" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="350" y="240" as="sourcePoint"/>
+                        <mxPoint x="750" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m4" value="verifyDoctor(docAddr)" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="150" y="300" as="sourcePoint"/>
+                        <mxPoint x="750" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m5" value="Emit DoctorVerified" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="750" y="340" as="sourcePoint"/>
+                        <mxPoint x="350" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m6" value="registerPatient(data)" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="550" y="400" as="sourcePoint"/>
+                        <mxPoint x="750" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m7" value="bookAppointment(docAddr, ETH)" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="550" y="460" as="sourcePoint"/>
+                        <mxPoint x="750" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m8" value="Deduct 10% fee, Send 90% to Doc" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="750" y="500" as="sourcePoint"/>
+                        <mxPoint x="350" y="500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m9" value="updateMedicalRecord(diagnosis)" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="350" y="560" as="sourcePoint"/>
+                        <mxPoint x="750" y="560" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m10" value="prescribeMedicine(medId)" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="350" y="600" as="sourcePoint"/>
+                        <mxPoint x="750" y="600" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m11" value="buyMedicine(medId, ETH)" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="550" y="660" as="sourcePoint"/>
+                        <mxPoint x="750" y="660" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m12" value="withdrawPlatformRevenue()" style="html=1;verticalAlign=bottom;endArrow=block;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry width="80" relative="1" as="geometry">
+                        <mxPoint x="150" y="720" as="sourcePoint"/>
+                        <mxPoint x="750" y="720" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="m13" value="Transfer ETH to Admin" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=12;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="750" y="760" as="sourcePoint"/>
+                        <mxPoint x="150" y="760" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
