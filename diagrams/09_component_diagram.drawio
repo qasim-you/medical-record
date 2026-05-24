@@ -1,0 +1,179 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Component Diagram" id="comp1">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="&lt;b&gt;HealthChain DApp — Component Diagram&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend Package -->
+        <mxCell id="fe_pkg" value="&lt;b&gt;Frontend Package (client/)&lt;/b&gt;" style="shape=mxgraph.sysml.package;overflow=fill;labelX=220;align=left;spacingLeft=10;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="600" height="770" as="geometry" />
+        </mxCell>
+
+        <!-- UI Components -->
+        <mxCell id="ui_grp" value="&lt;b&gt;UI Layer (components/)&lt;/b&gt;" style="shape=mxgraph.sysml.package;overflow=fill;labelX=160;align=left;spacingLeft=10;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#999;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="110" width="260" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sidebar" value="&lt;b&gt;DynamicSidebar&lt;/b&gt;" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="150" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c_header" value="&lt;b&gt;DynamicHeader&lt;/b&gt;" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="195" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c_layout" value="&lt;b&gt;PageLayout&lt;/b&gt;" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="240" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c_shadcn" value="&lt;b&gt;Shadcn/UI Components&lt;/b&gt;&#xa;(Button, Dialog, Badge, Card...)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="285" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="c_toast" value="&lt;b&gt;Toaster &amp; Toast Hooks&lt;/b&gt;" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="340" width="200" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="c_motion" value="&lt;b&gt;Framer Motion&lt;/b&gt;&#xa;(Animations)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="385" width="200" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- Page Components -->
+        <mxCell id="pg_grp" value="&lt;b&gt;Pages (app/)&lt;/b&gt;" style="shape=mxgraph.sysml.package;overflow=fill;labelX=130;align=left;spacingLeft=10;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#999;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="370" y="110" width="250" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="Landing Page" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="150" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="Admin Dashboard" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="190" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="Verify Doctors Page" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="225" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="Marketplace (Medicines)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="260" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" value="Doctor Dashboard" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="300" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p6" value="Doctor Appointments" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="335" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p7" value="Prescribe Medicine" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="370" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p8" value="Patient Dashboard" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="410" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p9" value="Find Doctors + AI Suggestion" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="445" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p10" value="Chat (P2P Encrypted)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="480" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Context & Config -->
+        <mxCell id="ctx_grp" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="ctx_title" value="&lt;b&gt;State &amp; Config&lt;/b&gt;" style="text;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="150" y="455" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c_web3" value="&lt;b&gt;Web3Context&lt;/b&gt;&#xa;(contract, account, role)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="480" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c_config" value="&lt;b&gt;config/index.js&lt;/b&gt;&#xa;(ABI + Contract Address)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="530" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Styling -->
+        <mxCell id="style_grp" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="540" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="style_title" value="&lt;b&gt;Styling Engine&lt;/b&gt;" style="text;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="605" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tw" value="Tailwind CSS v4 (OKLCH)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="635" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_css" value="globals.css (@theme tokens)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="635" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Registration -->
+        <mxCell id="reg_grp" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="700" width="540" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="reg_title" value="&lt;b&gt;Registration Pages&lt;/b&gt;" style="text;html=1;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="705" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c_regp" value="Register Patient" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="735" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_regd" value="Register Doctor" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="735" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Backend Package -->
+        <mxCell id="be_pkg" value="&lt;b&gt;Blockchain Package (web3/)&lt;/b&gt;" style="shape=mxgraph.sysml.package;overflow=fill;labelX=220;align=left;spacingLeft=10;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="750" y="70" width="350" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="&lt;b&gt;Healthcare.sol&lt;/b&gt;&#xa;Main Smart Contract" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="130" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="&lt;b&gt;hardhat.config.js&lt;/b&gt;&#xa;Network Config (localhost:8545)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="200" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="&lt;b&gt;deploy.js&lt;/b&gt;&#xa;Deployment Script" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="270" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="&lt;b&gt;ABI Artifacts&lt;/b&gt;&#xa;(artifacts/contracts/)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="340" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- External -->
+        <mxCell id="ext_pkg" value="&lt;b&gt;External Services&lt;/b&gt;" style="shape=mxgraph.sysml.package;overflow=fill;labelX=150;align=left;spacingLeft=10;html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="750" y="480" width="350" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="x1" value="&lt;b&gt;MetaMask Wallet&lt;/b&gt;&#xa;Browser Extension" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="530" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x2" value="&lt;b&gt;IPFS / Pinata&lt;/b&gt;&#xa;Decentralized File Storage" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="600" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x3" value="&lt;b&gt;Hardhat Local Network&lt;/b&gt;&#xa;Ethereum Simulator (Chain 31337)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="670" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Interface connections -->
+        <mxCell id="ic1" value="provides" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=10;" edge="1" source="c_web3" target="b1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ic2" value="uses" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=10;" edge="1" source="c_config" target="b4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ic3" value="signs via" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=10;" edge="1" source="c_web3" target="x1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- HealthBot Components (NEW) -->
+
+        <!-- Chatbot.jsx in UI Layer -->
+        <mxCell id="c_chatbot" value="&lt;b&gt;Chatbot.jsx&lt;/b&gt;&#xa;HealthBot AI Widget&#xa;(Floating Chat UI)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="395" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- /api/groq-chat API Route — inside Frontend Package -->
+        <mxCell id="c_groqroute" value="&lt;b&gt;/api/groq-chat&lt;/b&gt;&#xa;Next.js Server Route&#xa;(Groq SDK + System Prompt)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="515" width="230" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Groq Cloud API in External Services -->
+        <mxCell id="x4" value="&lt;b&gt;Groq Cloud API&lt;/b&gt;&#xa;LLaMA 3.1 8B Instant&#xa;AI Inference (HTTPS)" style="shape=component;align=left;spacingLeft=36;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="790" y="740" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Chatbot -> API Route connection -->
+        <mxCell id="ic4" value="HTTP POST" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=10;" edge="1" source="c_chatbot" target="c_groqroute" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- API Route -> Groq External -->
+        <mxCell id="ic5" value="calls" style="endArrow=open;endSize=12;dashed=1;html=1;fontSize=10;" edge="1" source="c_groqroute" target="x4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

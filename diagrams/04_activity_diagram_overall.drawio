@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Overall Activity Diagram" id="act_overall">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1400" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="&lt;b&gt;Activity Diagram — Overall System Workflow&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="500" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Swimlanes -->
+        <mxCell id="laneAdmin" value="Admin" style="swimlane;html=1;startSize=30;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="100" y="60" width="250" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="laneDoctor" value="Doctor" style="swimlane;html=1;startSize=30;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="60" width="250" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="lanePatient" value="Patient" style="swimlane;html=1;startSize=30;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="600" y="60" width="250" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="laneSC" value="Smart Contract" style="swimlane;html=1;startSize=30;fillColor=#FFFFFF;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="850" y="60" width="250" height="900" as="geometry" />
+        </mxCell>
+
+        <!-- Nodes -->
+        <!-- Start Node Patient -->
+        <mxCell id="startPat" value="" style="ellipse;html=1;shape=mxgraph.flowchart.start_2;fillColor=#FFFFFF;fontSize=14;" vertex="1" parent="lanePatient">
+          <mxGeometry x="105" y="50" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actPatReg" value="Register &amp; Connect" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lanePatient">
+          <mxGeometry x="65" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ePat1" edge="1" source="startPat" target="actPatReg" parent="lanePatient"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Start Node Doctor -->
+        <mxCell id="startDoc" value="" style="ellipse;html=1;shape=mxgraph.flowchart.start_2;fillColor=#FFFFFF;fontSize=14;" vertex="1" parent="laneDoctor">
+          <mxGeometry x="105" y="50" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="actDocReg" value="Register &amp; Pay ETH" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneDoctor">
+          <mxGeometry x="65" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eDoc1" edge="1" source="startDoc" target="actDocReg" parent="laneDoctor"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Contract processes Reg -->
+        <mxCell id="actScDocReg" value="Store Doc Profile" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneSC">
+          <mxGeometry x="65" y="120" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eDoc2" edge="1" source="actDocReg" target="actScDocReg" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        
+        <mxCell id="actScPatReg" value="Store Pat Profile" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneSC">
+          <mxGeometry x="65" y="180" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ePat2" edge="1" source="actPatReg" target="actScPatReg" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Admin Verifies -->
+        <mxCell id="actAdminVer" value="Verify Doctor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneAdmin">
+          <mxGeometry x="65" y="240" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eDoc3" edge="1" source="actScDocReg" target="actAdminVer" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="910" y="300" /><mxPoint x="225" y="300" /></Array></mxGeometry></mxCell>
+
+        <!-- Patient Books -->
+        <mxCell id="actPatBook" value="Book Appointment" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lanePatient">
+          <mxGeometry x="65" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eAdminToPat" edge="1" source="actAdminVer" target="actPatBook" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="225" y="380" /><mxPoint x="725" y="380" /></Array></mxGeometry></mxCell>
+
+        <mxCell id="actScBook" value="Deduct Fee / Store" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneSC">
+          <mxGeometry x="65" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ePatBook" edge="1" source="actPatBook" target="actScBook" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Doctor Consults -->
+        <mxCell id="actDocConsult" value="Consult &amp; Update Record" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneDoctor">
+          <mxGeometry x="65" y="400" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="eScToDoc" edge="1" source="actScBook" target="actDocConsult" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="910" y="485" /><mxPoint x="475" y="485" /></Array></mxGeometry></mxCell>
+
+        <mxCell id="actDocPresc" value="Prescribe Medicine" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneDoctor">
+          <mxGeometry x="65" y="480" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eDoc4" edge="1" source="actDocConsult" target="actDocPresc" parent="laneDoctor"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="actScPresc" value="Store Prescription" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneSC">
+          <mxGeometry x="65" y="480" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eDocPresc" edge="1" source="actDocPresc" target="actScPresc" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Patient Buys -->
+        <mxCell id="actPatBuy" value="Buy Medicine" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lanePatient">
+          <mxGeometry x="65" y="560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eScToBuy" edge="1" source="actScPresc" target="actPatBuy" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="910" y="640" /><mxPoint x="725" y="640" /></Array></mxGeometry></mxCell>
+
+        <mxCell id="actScBuy" value="Process Payment" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="laneSC">
+          <mxGeometry x="65" y="560" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eBuyToSc" edge="1" source="actPatBuy" target="actScBuy" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- End -->
+        <mxCell id="endNode" value="" style="ellipse;html=1;shape=mxgraph.flowchart.terminator;fillColor=#FFFFFF;fontSize=14;" vertex="1" parent="lanePatient">
+          <mxGeometry x="105" y="640" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eEnd" edge="1" source="actScBuy" target="endNode" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="910" y="720" /><mxPoint x="725" y="720" /></Array></mxGeometry></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

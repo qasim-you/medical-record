@@ -1,4 +1,6 @@
 import "@nomicfoundation/hardhat-toolbox";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 export default {
@@ -7,7 +9,7 @@ export default {
         settings: {
             optimizer: {
                 enabled: true,
-                runs: 200
+                runs: 1
             }
         }
     },
@@ -16,6 +18,10 @@ export default {
             chainId: 31337,
             allowUnlimitedContractSize: true
         },
+        sepolia: {
+            url: process.env.SEPOLIA_RPC_URL || "",
+            accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+        }
     },
     paths: {
         artifacts: "./artifacts",

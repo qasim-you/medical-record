@@ -1,0 +1,84 @@
+<mxfile host="Electron" modified="2026-05-18T17:00:00.000Z" agent="Mozilla/5.0" etag="xyz" version="21.6.8" type="device">
+  <diagram id="collaboration_diag" name="Collaboration Diagram">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Actor: User/Patient -->
+        <mxCell id="user" value="User / Patient" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="30" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Object: Next.js Frontend -->
+        <mxCell id="frontend" value="&lt;u&gt;:Next.js Frontend&lt;/u&gt;" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Object: Ethers.js Provider -->
+        <mxCell id="ethers" value="&lt;u&gt;:Ethers.js Provider&lt;/u&gt;" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Object: MetaMask Wallet -->
+        <mxCell id="metamask" value="&lt;u&gt;:MetaMask Wallet&lt;/u&gt;" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Object: Smart Contract -->
+        <mxCell id="blockchain" value="&lt;u&gt;:Healthcare Contract&lt;/u&gt;&lt;br&gt;(Hardhat Node)" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="350" width="140" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Object: IPFS Gateway -->
+        <mxCell id="ipfs" value="&lt;u&gt;:Pinata IPFS API&lt;/u&gt;" style="html=1;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#000000;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections & Labels -->
+        <!-- User to Frontend -->
+        <mxCell id="edge1" value="1: Interacts / Submits Form &amp;gt;" style="endArrow=none;html=1;rounded=0;verticalAlign=bottom;labelBackgroundColor=none;" edge="1" parent="1" source="user" target="frontend">
+          <mxGeometry x="-0.1" y="15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Frontend to Ethers -->
+        <mxCell id="edge2" value="2: Calls Contract Methods &amp;gt;" style="endArrow=none;html=1;rounded=0;verticalAlign=bottom;labelBackgroundColor=none;rotation=-25;" edge="1" parent="1" source="frontend" target="ethers">
+          <mxGeometry x="-0.1" y="-15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Ethers to MetaMask -->
+        <mxCell id="edge3" value="3: Request Signature &amp;gt;" style="endArrow=none;html=1;rounded=0;verticalAlign=bottom;labelBackgroundColor=none;" edge="1" parent="1" source="ethers" target="metamask">
+          <mxGeometry y="-15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- MetaMask to Blockchain -->
+        <mxCell id="edge4" value="4: Broadcasts Transaction v" style="endArrow=none;html=1;rounded=0;labelBackgroundColor=none;verticalAlign=bottom;" edge="1" parent="1" source="metamask" target="blockchain">
+          <mxGeometry x="0.2" width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Frontend to IPFS -->
+        <mxCell id="edge5" value="5: Uploads Files &amp;gt;" style="endArrow=none;html=1;rounded=0;verticalAlign=top;labelBackgroundColor=none;" edge="1" parent="1" source="frontend" target="ipfs">
+          <mxGeometry x="0.1" y="15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Blockchain to Ethers -->
+        <mxCell id="edge6" value="&amp;lt; 6: Returns Event / Receipt" style="endArrow=none;html=1;rounded=0;verticalAlign=top;labelBackgroundColor=none;" edge="1" parent="1" source="blockchain" target="ethers">
+          <mxGeometry x="0.1" y="15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
