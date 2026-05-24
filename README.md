@@ -6,7 +6,7 @@
 
 <br />
 
-![Architecture Diagram](./diagrams/06_deployment_architecture_diagram.svg)
+![Architecture Diagram](./client/assets/diagrams/06_deployment_architecture_diagram.svg)
 
 ---
 
@@ -48,7 +48,7 @@ The system operates on a Role-Based Access Control (RBAC) model. Below is the st
 * **Actors:** Doctor.
 * **Flow:** The doctor views the patient's decrypted records. Post-consultation, the doctor writes a prescription which is cryptographically signed and stored permanently on the blockchain.
 
-![Sequence Diagram](./diagrams/03_sequence_diagram_overall.svg)
+![Sequence Diagram](./client/assets/diagrams/03_sequence_diagram_overall.svg)
 
 ---
 
@@ -68,12 +68,12 @@ The system operates on a Role-Based Access Control (RBAC) model. Below is the st
 ### Use Case Diagram
 This diagram outlines the primary actions that each user role can perform within the DApp.
 
-![Use Case Diagram](./diagrams/01_use_case_diagram.svg)
+![Use Case Diagram](./client/assets/diagrams/01_use_case_diagram.svg)
 
 ### Entity Relationship (Data Flow)
 Shows how Blockchain state maps to off-chain IPFS storage.
 
-![ER Diagram](./diagrams/05_er_diagram.svg)
+![ER Diagram](./client/assets/diagrams/05_er_diagram.svg)
 
 ---
 
