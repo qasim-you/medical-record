@@ -130,3 +130,7 @@ coverage.json
 # Scratch files
 scratch_*.js
 scratch/
+
+# Local folders
+diagrams/
+
