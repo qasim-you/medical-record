@@ -6,7 +6,21 @@
 
 <br />
 
-![Architecture Diagram](./diagrams/06_deployment_architecture_diagram.svg)
+```mermaid
+graph TD
+    User([User: Patient / Doctor / Admin]) --> |Interacts via Browser| Frontend
+    subgraph "Next.js Frontend (Client)"
+        UI[UI Components]
+        Web3[Ethers.js / Web3Context]
+        UI --- Web3
+    end
+    Frontend --> |Uploads/Downloads Files| IPFS[(IPFS Network)]
+    Frontend --> |Signs & Sends Transactions| BC[(Ethereum Blockchain)]
+    subgraph "Smart Contracts (Backend)"
+        BC --> |Healthcare.sol| Contract[Core Logic & Access Control]
+    end
+    Frontend --> |API Requests| Groq[Groq AI SDK]
+```
 
 ---
 
@@ -48,7 +62,28 @@ The system operates on a Role-Based Access Control (RBAC) model. Below is the st
 * **Actors:** Doctor.
 * **Flow:** The doctor views the patient's decrypted records. Post-consultation, the doctor writes a prescription which is cryptographically signed and stored permanently on the blockchain.
 
-![Sequence Diagram](./diagrams/03_sequence_diagram_overall.svg)
+```mermaid
+sequenceDiagram
+    participant P as Patient
+    participant F as Next.js Frontend
+    participant SC as Smart Contract
+    participant IPFS as IPFS Storage
+    participant D as Doctor
+
+    P->>F: Request Appointment & Upload Data
+    F->>IPFS: Encrypt & Store Medical File
+    IPFS-->>F: Return IPFS Hash (CID)
+    F->>SC: Transaction: Book Appointment & Grant Access (Hash)
+    SC-->>F: Transaction Confirmed
+    D->>F: View Patient Data
+    F->>SC: Verify Access Permissions
+    SC-->>F: Access Granted (Returns Hash)
+    F->>IPFS: Fetch File using Hash
+    IPFS-->>F: Return File
+    F-->>D: Decrypt & Display Record
+    D->>F: Write Prescription
+    F->>SC: Transaction: Save Prescription
+```
 
 ---
 
@@ -68,12 +103,58 @@ The system operates on a Role-Based Access Control (RBAC) model. Below is the st
 ### Use Case Diagram
 This diagram outlines the primary actions that each user role can perform within the DApp.
 
-![Use Case Diagram](./diagrams/01_use_case_diagram.svg)
+```mermaid
+flowchart LR
+    subgraph System
+        R1[Register & Verify]
+        A1[Book Appointment]
+        R2[Manage Records]
+        P1[Write Prescription]
+        C1[AI Chatbot]
+    end
+
+    Admin([Admin]) --> R1
+    Patient([Patient]) --> A1
+    Patient --> R2
+    Patient --> C1
+    Doctor([Verified Doctor]) --> P1
+    Doctor --> A1
+    Doctor --> C1
+```
 
 ### Entity Relationship (Data Flow)
 Shows how Blockchain state maps to off-chain IPFS storage.
 
-![ER Diagram](./diagrams/05_er_diagram.svg)
+```mermaid
+erDiagram
+    PATIENT ||--o{ APPOINTMENT : books
+    PATIENT ||--o{ RECORD : owns
+    DOCTOR ||--o{ APPOINTMENT : manages
+    DOCTOR ||--o{ PRESCRIPTION : issues
+    PATIENT ||--o{ PRESCRIPTION : receives
+    
+    PATIENT {
+        address walletAddress
+        string name
+        string email
+    }
+    DOCTOR {
+        address walletAddress
+        string name
+        string specialization
+        bool isVerified
+    }
+    RECORD {
+        string ipfsHash
+        string fileName
+        uint256 timestamp
+    }
+    PRESCRIPTION {
+        uint256 id
+        string details
+        uint256 timestamp
+    }
+```
 
 ---
 
