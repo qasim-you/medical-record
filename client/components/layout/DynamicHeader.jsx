@@ -1,11 +1,41 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useWeb3Context } from "@/contexts/Web3Context";
 import { Bell, Search } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function DynamicHeader({ title = "Dashboard" }) {
-    const { role } = useWeb3Context();
+    const { role, contract, account } = useWeb3Context();
+    const router = useRouter();
+
+    const [hasNotification, setHasNotification] = useState(false);
+    const [notificationSenderFull, setNotificationSenderFull] = useState("");
+    const [notificationSenderLabel, setNotificationSenderLabel] = useState("");
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    useEffect(() => {
+        if (!contract || !account) return;
+
+        const onMessageSent = (sender, receiver) => {
+            try {
+                if (!receiver || receiver.toLowerCase() !== account?.toLowerCase()) return;
+                const label = `${sender.slice(0, 6)}...${sender.slice(-4)}`;
+                setNotificationSenderFull(sender);
+                setNotificationSenderLabel(label);
+                setHasNotification(true);
+                setShowDropdown(true);
+            } catch (err) {
+                console.error("Header notification handler error:", err);
+            }
+        };
+
+        contract.on("MessageSent", onMessageSent);
+        return () => {
+            contract.off("MessageSent", onMessageSent);
+        };
+    }, [contract, account]);
 
     return (
         <header className="h-20 bg-background/50 backdrop-blur-md border-b border-border flex items-center justify-between px-4 md:px-8 sticky top-0 z-50 transition-all text-foreground">

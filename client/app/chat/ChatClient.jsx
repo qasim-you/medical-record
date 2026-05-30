@@ -1,16 +1,14 @@
 "use client";
 
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import PageLayout from "@/components/layout/PageLayout";
 import { useWeb3Context } from "@/contexts/Web3Context";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { uploadFileToIPFS } from "@/utils/ipfs";
-import { Send, Hash, MessageCircle, Search, ShieldCheck, Mic, FileText } from "lucide-react";
+import { Send, Hash, MessageCircle, Search, ShieldCheck, Mic } from "lucide-react";
 
-// Inner component that uses useSearchParams — must be wrapped in <Suspense>
-function ChatDashboardInner() {
+export default function ChatClient() {
     const { contract, account, role } = useWeb3Context();
     const { toast } = useToast();
 
@@ -90,7 +88,6 @@ function ChatDashboardInner() {
         fetchContacts();
     }, [contract, role]);
 
-    // Listen for new messages
     useEffect(() => {
         if (!contract || !account) return;
 
@@ -121,7 +118,6 @@ function ChatDashboardInner() {
         fetchMessages(addr);
     };
 
-    // useSearchParams is safely inside this component which is wrapped in <Suspense>
     const searchParams = useSearchParams();
     useEffect(() => {
         const partner = searchParams?.get?.("partner");
@@ -148,7 +144,12 @@ function ChatDashboardInner() {
             return (
                 <div className="space-y-2">
                     <p className="font-semibold text-sm text-foreground">Document</p>
-                    <a href={payload.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-slate-100 border border-slate-200 text-slate-900 text-sm hover:bg-slate-200 transition-colors">
+                    <a
+                        href={payload.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-slate-100 border border-slate-200 text-slate-900 text-sm hover:bg-slate-200 transition-colors"
+                    >
                         <span className="font-medium truncate">{payload.name}</span>
                         <span className="text-xs text-slate-500">Open</span>
                     </a>
@@ -304,8 +305,7 @@ function ChatDashboardInner() {
     const activeContactDetails = contacts.find(c => c.wallet.toLowerCase() === activePartner.toLowerCase());
 
     return (
-        <PageLayout title="Encrypted Direct Messages">
-            <div className="flex h-[calc(100vh-140px)] gap-6">
+        <div className="flex h-[calc(100vh-140px)] gap-6">
 
             {/* Sidebar: Contacts List */}
             <div className="w-80 bg-card border border-border rounded-3xl p-6 flex flex-col shadow-2xl relative overflow-hidden shrink-0">
@@ -427,7 +427,7 @@ function ChatDashboardInner() {
                                         className="w-14 h-14 rounded-full bg-slate-100 border border-border text-slate-700 flex items-center justify-center hover:bg-slate-200 transition-colors"
                                         title="Attach document"
                                     >
-                                        <FileText className="w-5 h-5" />
+                                        <Hash className="w-5 h-5" />
                                     </button>
 
                                     <button
@@ -440,7 +440,7 @@ function ChatDashboardInner() {
                                     </button>
 
                                     <Button type="submit" disabled={sending || isUploadingFile} className="w-14 h-14 rounded-full bg-teal-500 hover:bg-teal-400 text-white shrink-0 shadow-[0_0_20px_-5px_rgba(20,184,166,0.5)] transition-all transform hover:scale-105 active:scale-95">
-                                        {sending ? <span className="animate-spin border-2 border-white/30 border-t-white rounded-full w-6 h-6"></span> : <Send className="w-5 h-5 " />}
+                                        {sending ? <span className="animate-spin border-2 border-white/30 border-t-white rounded-full w-6 h-6"></span> : <Send className="w-5 h-5 ml-1" />}
                                     </Button>
                                 </div>
 
@@ -470,21 +470,5 @@ function ChatDashboardInner() {
                 )}
             </div>
         </div>
-    </PageLayout>
-    );
-}
-
-// Page default export — wraps the inner component in Suspense as required by Next.js
-export default function ChatDashboard() {
-    return (
-        <Suspense fallback={
-            <PageLayout title="Encrypted Direct Messages">
-                <div className="flex h-[calc(100vh-140px)] items-center justify-center text-sm text-muted-foreground">
-                    Loading chat...
-                </div>
-            </PageLayout>
-        }>
-            <ChatDashboardInner />
-        </Suspense>
     );
 }

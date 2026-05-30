@@ -171,7 +171,7 @@ export default function DoctorPatients() {
                                             value={form.history} onChange={e => setForm({ ...form, history: e.target.value })} />
                                     </div>
 
-                                    <Button disabled={updating} className="w-full h-14 bg-rose-600 hover:bg-rose-500 text-foreground text-lg font-bold rounded-2xl shadow-[0_0_30px_-5px_var(--tw-shadow-color)] shadow-rose-600/30 transition-all">
+                                    <Button disabled={updating} className="w-full h-14 bg-rose-600 hover:bg-rose-500 text-white text-lg font-bold rounded-2xl shadow-[0_0_30px_-5px_var(--tw-shadow-color)] shadow-rose-600/30 transition-all">
                                         {updating ? "Mining Block..." : "Sign & Append Record"}
                                     </Button>
                                 </form>
